@@ -17,4 +17,6 @@ dist
 # mac directories
 .DS_Store
 
+*.iml
+.idea
 

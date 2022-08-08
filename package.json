@@ -12,19 +12,19 @@
   ],
   "scripts": {
     "clean": "rimraf coverage/ dist/ node_modules/",
-    "build": "npm run lint && tsc",
+    "build": "yarn run lint && tsc",
     "prepack": "tsc",
     "build:watch": "tsc --watch",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "pretest": "npm run build",
+    "pretest": "yarn run build",
     "test:only": "lab  -l -c -S dist/test",
-    "test": "npm run test:only --",
-    "test:watch": "npm test -- -w",
+    "test": "yarn run test:only --",
+    "test:watch": "yarn test -- -w",
     "coverage": "lab -c -S -r console -o stdout -r html -o ./coverage/coverage.html ./dist/test",
-    "release:patch": "npm version patch && npm run release:publish",
-    "release:minor": "npm version minor && npm run release:publish",
-    "release:major": "npm version major && npm run release:publish",
-    "release:publish": "npm publish && git push --follow-tags"
+    "release:patch": "yarn version patch && yarn run release:publish",
+    "release:minor": "yarn version minor && yarn run release:publish",
+    "release:major": "yarn version major && yarn run release:publish",
+    "release:publish": "yarn publish && git push --follow-tags"
   },
   "bin": {
     "graphql-schema-utilities": "./dist/cli-launcher.js"
@@ -52,8 +52,8 @@
     "lab": "^14.1.0",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.6.1",
-    "tslint": "^5.5.0",
-    "typescript": "^3.1.0"
+    "tslint": "^6.1.3",
+    "typescript": "^4.7.4"
   },
   "dependencies": {
     "chalk": "^2.4.2",
